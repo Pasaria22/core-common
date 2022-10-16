@@ -1,11 +1,11 @@
 package com.example.demo.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 
 
 @Entity
@@ -13,6 +13,7 @@ import java.math.BigInteger;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class ShoeEntity {
 
     @Id
@@ -28,6 +29,9 @@ public class ShoeEntity {
     @Column(name = "COLOR", nullable = false)
     private int color;
 
-
-
+    public ShoeEntity(String name, int size, int color) {
+        this.name = name;
+        this.size = size;
+        this.color = color;
+    }
 }
